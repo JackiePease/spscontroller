@@ -9,13 +9,13 @@ It consists of:
 Components (a basic list - I might have missed some things)
 - Plywood for box
 - Sign vinyl and engraving acrylic for labels
-- M5 bolts to attach the lid to the box
-- M3 bolts to attach the label strips
+- M5 nuts and bolts to attach the lid to the box
+- M3 nuts and bolts to attach the label strips
 - wood glue
 - double sided sticky tape to make sure labels are securely attached
 - screw lock
-- Raspberry Pi 4
-- ESP32 Devkit C
+- Raspberry Pi 4 plus power supply and appropriate protective box
+- ESP32 Devkit C plus power supply
 - 4 x [Adafruit LED Arcade Button 1x4 - STEMMA QT I2C Breakout (STEMMA QT / Qwiic)](https://thepihut.com/products/adafruit-led-arcade-button-1x4-stemma-qt-i2c-breakout-stemma-qt-qwiic)
 - 1 green, 1 blue, 1 yellow, 1 red 30 mm arcade buttons e.g. [here for green](https://thepihut.com/products/arcade-button-30mm-translucent-green)
 - [8 clear translucent 30mm arcade buttons](https://thepihut.com/products/arcade-button-30mm-translucent-clear) 6 are for the 5 types of music and "no music", one is for white, and one is for purple (colour in with e.g. Sharpie as purple LED arcade buttons don't seem to be 
