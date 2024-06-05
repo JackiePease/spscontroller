@@ -1,15 +1,19 @@
-# spscontroller
+# spscontroller (Shadow Puppet Screen Controller)
 This was originally created to allow children to choose the colour of a projector screen, and music played on a loudspeaker, for a shadow puppet theatre 
 It consists of:
 - a laser cut ply box with arcade buttons and an esp32, which sends mqtt messages when music and colour have been chosen and the massive red button pressed 
 - a Raspberry Pi hosting an mqtt server which receives the messages and plays mp4 files via hdmi and mp3 files via audio output
 - additionally mqtt messages are sent to control WLED devices via wifi
-- The micropython code for the esp32 is in https://github.com/goatchurchprime/jupyter_micropython_developer_notebooks/blob/master/mqtt_async_projects/jackiearcadelights.ipynb. Julian @goatchurchprime wrote this code in micropython as the original library for the Adafruit LED Arcade Button 1x4 - STEMMA QT I2C Breakout was in Circuit Python.
+- The micropython code for the esp32 is in https://github.com/goatchurchprime/jupyter_micropython_developer_notebooks/blob/master/mqtt_async_projects/jackiearcadelights.ipynb. Julian @goatchurchprime wrote this code in micropython as the original library for the Adafruit LED Arcade Button 1x4 - STEMMA QT I2C Breakout was in [Circuit Python](https://github.com/adafruit/Adafruit_CircuitPython_seesaw).
 
-Components
+Components (a basic list - I might have missed some things)
 - Plywood for box
 - Sign vinyl and engraving acrylic for labels
-- M5 and M3 bolts
+- M5 bolts to attach the lid to the box
+- M3 bolts to attach the label strips
+- wood glue
+- double sided sticky tape to make sure labels are securely attached
+- screw lock
 - Raspberry Pi 4
 - ESP32 Devkit C
 - 4 x [Adafruit LED Arcade Button 1x4 - STEMMA QT I2C Breakout (STEMMA QT / Qwiic)](https://thepihut.com/products/adafruit-led-arcade-button-1x4-stemma-qt-i2c-breakout-stemma-qt-qwiic)
@@ -19,4 +23,7 @@ easily available
 - [Massive Arcade Button (red)](https://thepihut.com/products/massive-arcade-button-with-led-100mm-red)
 - 3 x [Arcade Button Quick-Connect Wire Pairs - 2.8mm/0.11" (10 pack)](https://thepihut.com/products/arcade-button-quick-connect-wire-pairs-0-11-10-pack) - For connecting the 30mm arcade buttons to breakout boards
 - [Arcade Button and Switch Quick-Connect Wires - 6.4mm/0.25" (10-pack)](https://thepihut.com/products/arcade-button-and-switch-quick-connect-wires-0-25-10-pack) - for connecting the massive red button to a breakout board (or find some 0.25" spade connectors and replace 0.11" spade connectors on spare 0.11" quick-connect wires
-- 
+- 3 x STEMMA QT / Qwiic Compatible JST-SH 4-Pin Cable (50mm)[https://thepihut.com/products/stemma-qt-qwiic-jst-sh-4-pin-cable] to connect I2C breakout boards to each other. You need to cut open the I2C address jumpers on the breakout boards so they have different addresses
+- 1 x [STEMMA QT / Qwiic JST SH 4-pin Cable - 100mm Long](https://thepihut.com/products/stemma-qt-qwiic-jst-sh-4-pin-cable-100mm-long) to attach the breakout boards to the ESP32
+- Projector and micro HDMI to projector HDMI cable
+- Loudspeaker and 3.5" audio jack connector
