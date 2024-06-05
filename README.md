@@ -1,5 +1,5 @@
 # spscontroller (Shadow Puppet Screen Controller)
-This was originally created to allow children to choose the colour of a projector screen, and music played on a loudspeaker, for a shadow puppet theatre 
+This was originally created to allow children to choose the colour of a projector screen, and music played on a loudspeaker, for a shadow puppet theatre. Please check dimensions etc. before laser cutting as I might have made changes during late night finishing session.
 It consists of:
 - a laser cut ply box with arcade buttons and an esp32, which sends mqtt messages when music and colour have been chosen and the massive red button pressed 
 - a Raspberry Pi hosting an mqtt server which receives the messages and plays mp4 files via hdmi and mp3 files via audio output
@@ -27,3 +27,5 @@ easily available
 - 1 x [STEMMA QT / Qwiic JST SH 4-pin Cable - 100mm Long](https://thepihut.com/products/stemma-qt-qwiic-jst-sh-4-pin-cable-100mm-long) to attach the breakout boards to the ESP32
 - Projector and micro HDMI to projector HDMI cable
 - Loudspeaker and 3.5" audio jack connector
+
+NOTE: INCOMPLETE - I will add some details of html etc. on Raspiub.com/
