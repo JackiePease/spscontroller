@@ -13,3 +13,6 @@ Components
 - Raspberry Pi 4
 - ESP32 Devkit C
 - 4 x [Adafruit LED Arcade Button 1x4 - STEMMA QT I2C Breakout (STEMMA QT / Qwiic)](https://thepihut.com/products/adafruit-led-arcade-button-1x4-stemma-qt-i2c-breakout-stemma-qt-qwiic)
+- 1 green, 1 blue, 1 yellow, 1 red 30 mm arcade buttons e.g. [here for green](https://thepihut.com/products/arcade-button-30mm-translucent-green)
+- [8 clear translucent 30mm arcade buttons](https://thepihut.com/products/arcade-button-30mm-translucent-clear) 6 are for the 5 types of music and "no music", one is for white, and one is for purple (colour in with e.g. Sharpie as purple LED arcade buttons don't seem to be 
+easily available
