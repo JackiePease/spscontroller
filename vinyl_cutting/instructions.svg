@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="instructions.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.73126247"
+     inkscape:cx="670.75779"
+     inkscape:cy="315.89205"
+     inkscape:window-width="1858"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="58.647504"
+       y="183.02038"
+       width="1002.5684"
+       height="291.95015"
+       id="rect236" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text234"
+       style="line-height:1.05;font-family:'Noto Sans CJK HK';font-size:60.47240067px;-inkscape-font-specification:'Noto Sans CJK HK, Bold';font-variant-ligatures:none;font-weight:bold;white-space:pre;shape-inside:url(#rect236)" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:16px;line-height:1.05;font-family:'Noto Sans CJK HK';-inkscape-font-specification:'Noto Sans CJK HK, Bold';font-variant-ligatures:none;stroke-width:0.264583"
+       x="7.2984295"
+       y="59.920319"
+       id="text242"><tspan
+         sodipodi:role="line"
+         id="tspan240"
+         style="stroke-width:0.264583"
+         x="7.2984295"
+         y="59.920319">Choose your background colour and </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="7.2984295"
+         y="76.720322"
+         id="tspan244" /><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="7.2984295"
+         y="93.520317"
+         id="tspan246">music, then press GO!</tspan></text>
+  </g>
+</svg>
