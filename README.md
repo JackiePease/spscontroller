@@ -28,4 +28,4 @@ easily available
 - Projector and micro HDMI to projector HDMI cable
 - Loudspeaker and 3.5" audio jack connector
 
-NOTE: INCOMPLETE - I will add some details of html etc. on Raspiub.com/
+NOTE: INCOMPLETE - I will add some details of html etc. on Raspi
