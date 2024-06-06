@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<!-- 1_green.mp4  2_blue.mp4  3_yellow.mp4  4_red.mp4  5_white.mp4  6_black.mp4  7_clouds_loop.mp4
+     audio: 1 - tense, 2 - romantic, 3 - silly, 4 - joyful, 5 - nostalgic, 6 - silent
+-->     
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial; font-size: 17px; }
+#myVideo { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; }
+.content { position: fixed; bottom: 0; background: rgba(0, 0, 0, 0.5); color: #f1f1f1; width: 100%; padding: 20px; }
+</style>
+<body>
+
+<!--
+Instructions:
+
+Use mosquitto on the command line to check:
+
+for connection status:
+> mosquitto_sub -h mosquitto.doesliverpool.xyz -t "spscontroller/#"
+
+To set the video files:
+> mosquitto_pub -h mosquitto.doesliverpool.xyz -t "spscontroller/controller/video" -m "Videos/blue.mp4"
+
+To set the audio files:
+
+> mosquitto_pub -h mosquitto.doesliverpool.xyz -t "spscontroller/controller/audio" -m "Music/romantic.mp3"
+
+> mosquitto_pub -h mosquitto.doesliverpool.xyz -t "spscontroller/controller/audio" -m "Music/tense.mp3"
+
+> mosquitto_pub -h mosquitto.doesliverpool.xyz -t "spscontroller/controller/audio" -m "Music/joyful.mp3"
+
+
+
+paho mqtt client library documentation at:  https://www.hivemq.com/blog/mqtt-client-library-encyclopedia-paho-js/
+
+
+Also look on this page to enable autoplay (from javascript) on Firefox!!!
+
+https://support.mozilla.org/en-US/kb/block-autoplay#w_always-allow-or-block-media-autoplay
+
+-->
+
+
+<video autoplay loop id="myVideo">
+  <source src="Videos/black.mp4" muted type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<audio autoplay loop id="myAudio">
+  <source src="Music/romantic.mp3" type="audio/mpeg" autoplay>
+  your browser does not support the audio element.
+</audio>
+
+<script src="./paho-mqtt.js" type="text/javascript"></script>
+  
+<script>
+var client = null; 
+var wheelietopic = "spscontrollerjunk/command";
+var defaultwebsocketaddr = "127.0.0.1:8080";
+
+var video = document.getElementById("myVideo");
+var audio = document.getElementById("myAudio");
+
+// Define some MQTT variables
+var client = null;
+var controllerTopicSub = "spscontroller/controller/+";
+var controllerTopicVideo = "spscontroller/controller/video";
+var controllerTopicAudio = "spscontroller/controller/audio";
+var controllerTopicStatus = "spscontroller/status";
+
+var newmp4 = "Videos/green.mp4";
+
+video.setAttribute('src', newmp4);
+video.pause(); video.load(); video.play();
+
+var newmp3 = "Music/tango.mp3";
+audio.setAttribute('src', newmp3);
+audio.pause();
+audio.load();
+audio.play();
+
+function onMessageArrived(msg) {
+    console.log(msg); 
+    if (msg.destinationName == controllerTopicVideo) {
+        video.pause();
+        video.setAttribute('src', msg.payloadString);
+        video.load(); 
+        video.play();
+        var sendColour = msg.payloadString;
+        sendColour = sendColour.replace("Videos/", "");
+        sendColour = sendColour.replace(".mp4", ""); 
+        console.log("sendColour: " + sendColour);
+        var sendHex = "#ff33aa"; 
+        switch (sendColour) {
+	   case("green"):
+		sendHex = "#00ff00";
+                break;
+           case("blue"):
+                sendHex = "#0000ff";
+                break;
+           case("yellow"):
+                sendHex = "#fed506";
+                break;
+           case("red"):
+                sendHex = "#ff0000";
+                break;
+           case("white"):
+                sendHex = "#ffffff";
+                break;
+           case("purple"):
+                sendHex = "#b502ff";
+                break;
+           default: 
+                sendHex = "#ff33aa";
+        }
+        console.log(sendHex);
+        var msg = new Paho.MQTT.Message(sendHex); 
+        msg.destinationName = "wledfgroup/col"; 
+        msg.retained = false;
+        client.send(msg);
+    }
+    if (msg.destinationName == controllerTopicAudio) {
+        audio.pause();
+        audio.setAttribute('src', msg.payloadString);
+        audio.load(); 
+        audio.play();
+    }
+}
+
+function onConnect() {
+    console.log("onConnect"); 
+    client.subscribe(controllerTopicSub); 
+    var msg = new Paho.MQTT.Message("Online *******"); 
+    msg.destinationName = controllerTopicStatus; 
+    msg.retained = true;
+    client.send(msg);
+    sendHex = "#00ff00";
+    var msgHex = new Paho.MQTT.Message(sendHex);
+    msgHex.destinationName = "wledfgroup/col";
+    msgHex.retained = false;
+    client.send(msgHex);
+
+}
+
+window.onload = function() { 
+    console.log("connecting to... "+defaultwebsocketaddr); 
+    var websocketaddr = defaultwebsocketaddr.split(":"); 
+    client = new Paho.MQTT.Client(websocketaddr[0], parseInt(websocketaddr[1]), "");
+    client.onMessageArrived = onMessageArrived; 
+    
+    var lwt = new Paho.MQTT.Message("Offline ---");
+    lwt.destinationName = controllerTopicStatus;
+    lwt.retained = true;
+    client.connect({ onSuccess:onConnect, willMessage:lwt });
+}
+
+</script>
+
+</body>
+</html>
+
