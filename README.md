@@ -34,7 +34,7 @@ easily available
 - Loudspeaker and 3.5" audio jack connector
 
 Run mqtt server on the pi, and set it up as an access point. The controller and any mqtt devices need to connect to the pi. 
-The pi uses the [paho mqtt library](https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.js) - copy this into the home directory (if you don't, it does seem to cache this).
+The pi uses the [paho mqtt library](https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js) - copy this into the home directory (if you don't, it does seem to cache this).
 Copy spscontroller.html and runkiosk.sh to the home directory.
 
 Other changes were made on the pi, but I don't have a list at this time.
