@@ -1,7 +1,7 @@
 # spscontroller (Shadow Puppet Screen Controller)
 This was originally created to allow children to choose the colour of a projector screen, and music played on a loudspeaker, for a shadow puppet theatre. 
 
-![alt text](https://github.com/JackiePease/spscontroller/blob/photos/outside_of_box.jpg?raw=true)
+![Picture of controller box](https://github.com/JackiePease/spscontroller/tree/main/photos/outside_of_box.jpg?raw=true)
 
 This documentation is incomplete due to late night completion... Please check before using (esp. before any laser cutting).
 
