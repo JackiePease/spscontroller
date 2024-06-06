@@ -1,6 +1,9 @@
 # spscontroller (Shadow Puppet Screen Controller)
-This was originally created to allow children to choose the colour of a projector screen, and music played on a loudspeaker, for a shadow puppet theatre. Please check dimensions etc. before laser cutting as I might have made changes during late night finishing session.
-It consists of:
+This was originally created to allow children to choose the colour of a projector screen, and music played on a loudspeaker, for a shadow puppet theatre. 
+
+This documentation is incomplete due to late night completion... Please check before using (esp. before any laser cutting).
+
+The controller consists of:
 - a laser cut ply box with arcade buttons and an esp32, which sends mqtt messages when music and colour have been chosen and the massive red button pressed 
 - a Raspberry Pi hosting an mqtt server which receives the messages and plays mp4 files via hdmi and mp3 files via audio output
 - additionally mqtt messages are sent to control WLED devices via wifi
@@ -28,4 +31,8 @@ easily available
 - Projector and micro HDMI to projector HDMI cable
 - Loudspeaker and 3.5" audio jack connector
 
-NOTE: INCOMPLETE - I will add some details of html etc. on Raspi
+Run mqtt server on the pi, and set it up as an access point. The controller and any mqtt devices need to connect to the pi. 
+The pi uses the [paho mqtt library](https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.js) - copy this into the home directory (if you don't, it does seem to cache this).
+Copy spscontroller.html and runkiosk.sh to the home directory.
+
+Other changes were made on the pi, but I don't have a list at this time.
